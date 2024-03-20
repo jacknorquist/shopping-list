@@ -4,18 +4,12 @@ const express = require("express");
 const app = express();
 
 const itemRoutes = require('./routing/itemRoutes');
-
+const { NotFoundError } = require("./expressError");
 
 app.use(express.json());
 
 
 app.use('/items', itemRoutes);
-
-
-
-
-
-
 
 
 
