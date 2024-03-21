@@ -12,18 +12,12 @@ app.use(express.json());
 app.use('/items', itemRoutes);
 
 
-
 /** 404 handler: matches unmatched routes; raises NotFoundError. */
 app.use(function (req, res) {
   throw new NotFoundError();
 });
 
-
-
-
-
-
-
+/**Global error handler. Handles errors and messages */
 app.use(function (err, req, res, next) {
   const status = err.status || 500;
   const message = err.message;
